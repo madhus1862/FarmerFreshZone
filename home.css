@@ -1,0 +1,168 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('wbg.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Ensures the background covers the full viewport height */
+}
+
+.name {
+  color: green;
+  padding-right: 20px;
+  font-size: 1.5em;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(240, 240, 240, 0.9); /* Slightly transparent background */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.left {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-box input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+  min-width: 120px; /* Ensures input box has a minimum width */
+}
+
+.search-box button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-box a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.navbar {
+  background-color: #4CAF50;
+  overflow: hidden;
+  
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows navbar items to wrap on smaller screens */
+  justify-content: center;
+}
+
+.navbar li {
+  margin-right: 80px;
+  align-items: space-between;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #3e8e41;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  
+  .name {
+    padding-right: 0;
+    font-size: 1.3em;
+  }
+
+  .navbar ul {
+    justify-content: flex-start;
+  }
+
+  .navbar li {
+    float: none;
+    width: auto;
+  }
+
+  .navbar li a {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens like phones */
+  .container {
+    padding: 5px;
+  }
+
+  .name {
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .right {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .search-box, .cart-box {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .search-box input[type="text"], .search-box button, .cart-box a {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar li {
+    width: 100%;
+  }
+
+  .navbar li a {
+    padding: 10px;
+    text-align: center;
+  }
+}

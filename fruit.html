@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+    <link rel="stylesheet" href="fruit.css">
+</head>
+<body>
+      <div class = "name">
+      <h2>Farmers Fresh Zone</h2>
+      </div>
+      </div>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="offer.html">Offer</a></li>
+        <li><a href="vegetables.html">Vegetables</a></li>
+        <li><a href="fruit.html">Fruits</a></li>
+        <li><a href="exotic.html">Exotic</a></li>
+        <li><a href="cuts.html">Fresh Cuts</a></li>
+        <li><a href="#">Nutrition Chargers</a></li>
+        <li><a href="pack.html">Packed Flavour</a></li>
+        <li><a href="#">Gourmet Salads</a></li>
+       <!-- Add more navigation items as needed -->
+      </ul>
+    </nav>
+    <h1 className="heading1">FRUITS</h1>
+    <div class="content1">
+        <div class="container1">
+         
+          <div class="watermelon">
+          
+          <!-- <p id="watermelon-off">New</p> -->
+          <div class="image-container1">
+              <img src="watermelon.jpg" width="150" height="150">
+            </div>
+            <p id="watermelon-name">WaterMelon Kiran(2kg-3.5kg)</p>
+            <p>This fruit is not only tasty but also packed with nutrients like vitamin C and A, potassium</p>
+        
+          <p id="watermelonprice"> MRP: ₹99.00</p>
+          <p id="watermelon-mrp">MRP: ₹215.25</p>
+          
+          <!-- <button id="add-to-cart">Add to Cart</button> -->
+          <a href="payment.html" class="button">Add to Cart</a>
+      </div>
+      </div>
+      <div class="container1">
+          <div class="pineapple">
+              
+            <div class="image-container">
+                  <img src="pineapple.jpg" width="150" height="120">
+                  
+                </div>
+                <br>
+           <p id="pineapple">Pineapple-semi ripe(800gm - 1.5kg)</p>
+            <!-- <br> -->
+            <p>The refreshing & tangy flavour of Pineapple is cherished by all! Moreover, these fruits are low.</p>
+            <p id="pineappleprice"> MRP: ₹99.00</p>
+            <p id="pineapple-mrp"> MRP: ₹110.00</p>
+             
+              <!-- <button id="add-to-cart">Add to Cart</button> -->
+              <a href="payment.html" class="button">Add to Cart</a>
+          </div>
+          </div>
+          <div class="container2">
+              <div class="gooseberry">
+                  <!-- <p id="ginger-off">28% Off</p> -->
+                  <div class="image-container">
+                      <img src="gooseberry.jpg" width="150" height="130">
+                    </div>
+                <p id="gooseberry-name">Gooseberry (Amla)  0.10kg</p><br>
+                 <p>Gooseberry has a unique sweet-tart flavor that can be enjoyed raw or cooked. </p>
+
+                 <p id="gooseberry">MRP: ₹12.00</p>
+                 <p id="gooseberry-mrp"> MRP: ₹13.65</p>
+                  
+                  <!-- <button id="add-to-cart">Add to Cart</button> -->
+                  <a href="payment.html" class="button">Add to Cart</a>
+              </div>
+          </div>
+          <div class="container3">
+              <div class="musk">
+                  
+                  <div class="image-container">
+                      <img src="musk.jpg" width="150" height="130">
+                    </div>
+                    <p id="musk-name">Musk Melon / Shamam(600g - 1kg)  1.00Nos</p>
+                  <p>Keep your eyes, skin, bones & immune system healthy with fresh shamam that's packet.</p>
+                  <p id="musk">MRP: ₹72.00</p>
+                 <p id="musk-mrp"> MRP: ₹103.95</p>     
+                  <!-- <button id="add-to-cart">Add to Cart</button> -->
+                  <a href="payment.html" class="button">Add to Cart</a>
+              </div>
+    </div>
+    <div class="container4">
+        <div class="blueberry">
+        
+            <div class="image-container">
+                <img src="blueberry.jpg" width="150" height="130">
+              </div>
+              <p id="blueberry-name">Blueberry (125 Gms)<br>
+            <p>Blueberries are rich in antioxidants. They decrease the risk of obesity, diabetes and heart.</p>
+            <p id="blueberry">MRP: ₹399.00</p>
+            <p id="blueberry-mrp"> MRP: ₹418.95</p>
+            
+            
+            <!-- <button id="add-to-cart">Add to Cart</button> -->
+            <a href="payment.html" class="button">Add to Cart</a>
+
+  </div>
+  </div>
+  <script>
+    fetch('get_fruits.php')
+        .then(response => response.json())
+        .then(data => {
+            const fruitList = document.getElementById('fruit-list');
+            data.forEach(fruit => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.innerHTML = `<img src="${fruit.image}" width="50" height="50">
+                                      <strong>${fruit.name}</strong> - ${fruit.description} - ₹${fruit.price}`;
+                fruitList.appendChild(listItem);
+            });
+        });
+</script>
+</body>
+</html>

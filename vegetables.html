@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetables</title>
+    <link rel="stylesheet" href="vegetables.css">
+</head>
+<body>
+    <!-- <div class="left">
+        <img src="farmerfz.jpg" alt="Farmers Fresh Zone">
+      </div>
+      <div class = "name"> -->
+        <h2>Farmers Fresh Zone</h2>
+      <!-- </div>
+      <div class="right">
+        <div class="search-box">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </div>
+        <div class="cart-box">
+          <a href="cart.html">Cart</a>
+        </div>
+      </div>
+    </div> -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="offer.html">Offer</a></li>
+      <li><a href="vegetables.html">Vegetables</a></li>
+      <li><a href="fruit.html">Fruits</a></li>
+      <li><a href="exotic.html">Exotic</a></li>
+      <li><a href="cuts.html">Fresh Cuts</a></li>
+      <li><a href="#">Nutrition Chargers</a></li>
+      <li><a href="pack.html">Packed Flavour</a></li>
+      <li><a href="#">Gourmet Salads</a></li>
+       <!-- Add more navigation items as needed -->
+      </ul>
+    </nav>
+    <h1 className="heading">VEGETABLES</h1>
+    <div class="content">
+        <div class="container">
+         
+          <div class="lady">
+          
+           
+          <div class="image-container">
+              <img src="lady.jpg" width="150" height="150">
+            </div>
+            <p id="lady-name">Ladies Finger</p>
+            <p>Ladies finger or okra, no matter what you call it will always be the crowd favorite and good for health!</p>
+ 
+          <p id="ladiesfingerprice"> MRP: ₹16.20</p>
+          <p id="lady-mrp">MRP: ₹37.80</p>
+          
+          <!-- <button id="add-to-cart">Add to Cart</button> -->
+          <a href="payment.html" class="button">Add to Cart</a>
+      </div>
+      </div>
+      <div class="container1">
+          <div class="curryleaf">
+              
+            <div class="image-container">
+                  <img src="curryleaf.jpg" width="150" height="120">
+                  
+                </div>
+           <p id="curryleaf-name">Curry Leaves (50 g)</p>
+            <br>
+            <p>Curry leaves complete any true dish of the south and are extremely good for your hair growth!</p>
+            <p id="curryleafprice"> MRP: ₹7.00</p>
+            <p id="curryleaf-mrp"> MRP: ₹10.00</p>
+             
+              <!-- <button id="add-to-cart">Add to Cart</button> -->
+              <a href="payment.html" class="button">Add to Cart</a>
+          </div>
+          </div>
+          <div class="container2">
+              <div class="ginger">
+                  <!-- <p id="ginger-off">28% Off</p> -->
+                  <div class="image-container">
+                      <img src="ginger.jpg" width="150" height="130">
+                    </div>
+                <p id="ginger-name">Ginger(0.20g)</p><br>
+                 <p>The anti-inflammattory property of ginger and other root vegtables lowers blood sugar and improves.</p>
+
+                 <p id="ginger">MRP: ₹38.00</p>
+                 <p id="ginger-mrp"> MRP: ₹71.40</p>
+                  
+                  <!-- <button id="add-to-cart">Add to Cart</button> -->
+                  <a href="payment.html" class="button">Add to Cart</a>
+              </div>
+          </div>
+          <div class="container3">
+              <div class="mint">
+                  
+                  <div class="image-container">
+                      <img src="mint.jpg" width="150" height="130">
+                    </div>
+                    <p id="mint-name">Mint Leaves(100) g</p><br>
+                  <p>Anti-inflamatory,anti-bacteria & full of flavour,mint is versatile herb.Mint leaves are low</p>
+                  <p id="mint">MRP: ₹17.00</p>
+                 <p id="mint-mrp"> MRP: ₹27.30</p>
+                  
+              
+<!--                   
+                  <button id="add-to-cart">Add to Cart</button> -->
+                  <a href="payment.html" class="button">Add to Cart</a>
+      
+        </div>
+    </div>
+    <div class="container4">
+        <div class="greenchilli">
+        
+            <div class="image-container">
+                <img src="greenchilly2.jpg" width="150" height="130">
+              </div>
+              <p id="greenchilli-name">Green Chilli(0.10Kg) </p><br>
+            <p>The heat from chillies acts as a pain reliever,aids digestion and adds flavour to the food!</p>
+            <p id="greenchilli">MRP: ₹10.00</p>
+            <p id="greenchilli-mrp"> MRP: ₹21.84</p>
+            
+            
+            <!-- <button id="add-to-cart">Add to Cart</button> -->
+            <a href="payment.html" class="button">Add to Cart</a>
+
+  </div>
+  </div>
+  <script>
+    fetch('get_vegetables.php')
+        .then(response => response.json())
+        .then(data => {
+            const vegetableList = document.getElementById('vegetable-list');
+            data.forEach(vegetable => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.innerHTML = `<img src="${vegetable.image_url}" width="50" height="50">
+                                      <strong>${vegetable.name}</strong> - ${vegetable.description}`;
+                vegetableList.appendChild(listItem);
+            });
+        });
+</script>
+</body>
+</html>
